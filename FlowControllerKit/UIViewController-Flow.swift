@@ -2,12 +2,12 @@ import UIKit
 
 extension UIViewController {
 
-    /// A Wrapper method for show(sender:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the show(sender:) with the ViewController.
+    /// A Wrapper method for show(sender:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the show(sender:) with the ViewController.
     ///
     /// - Parameters:
     ///   - viewController: The ViewController to be shown
-    ///   - preparation: A clousre that runs before show(sender:) is called
+    ///   - preparation: A closure that runs before show(sender:) is called
     public func showing<T>(_ viewController: UIViewController, preparation: ((T) -> Void)? = nil) -> (T) -> Void {
         return { value in
             preparation?(value)
@@ -15,12 +15,12 @@ extension UIViewController {
         }
     }
 
-    /// A Wrapper method for show(sender:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the show(sender:) with the ViewController.
+    /// A Wrapper method for show(sender:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the show(sender:) with the ViewController.
     ///
     /// - Parameters:
     ///   - viewController: The ViewController to be shown
-    ///   - preparation: A clousre that runs before show(sender:) is called
+    ///   - preparation: A closure that runs before show(sender:) is called
     public func showing(_ viewController: UIViewController, preparation: (() -> Void)? = nil) -> () -> Void {
         return {
             preparation?()
@@ -28,12 +28,12 @@ extension UIViewController {
         }
     }
     
-    /// A Wrapper method for dismiss(animated:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the dismiss(animated:) with the ViewController.
+    /// A Wrapper method for dismiss(animated:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the dismiss(animated:) with the ViewController.
     ///
     /// - Parameters:
     ///   - animated: <#animated description#>
-    ///   - preparation: A clousre that runs before dismiss(animated:) is called
+    ///   - preparation: A closure that runs before dismiss(animated:) is called
     public func dismissing<T>(animated: Bool = true, preparation: ((T) -> Void)? = nil) -> (T) -> Void {
         return { value in
             preparation?(value)
@@ -41,12 +41,12 @@ extension UIViewController {
         }
     }
 
-    /// A Wrapper method for dismiss(animated:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the dismiss(animated:) with the ViewController.
+    /// A Wrapper method for dismiss(animated:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the dismiss(animated:) with the ViewController.
     ///
     /// - Parameters:
     ///   - animated: <#animated description#>
-    ///   - preparation: A clousre that runs before dismiss(animated:) is called
+    ///   - preparation: A closure that runs before dismiss(animated:) is called
     public func dismissing(animated: Bool = true, preparation: (() -> Void)? = nil) -> () -> Void {
         return {
             preparation?()
@@ -54,13 +54,13 @@ extension UIViewController {
         }
     }
 
-    /// A Wrapper method for present(animated:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the present(animated:) with the ViewController.
+    /// A Wrapper method for present(animated:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the present(animated:) with the ViewController.
     ///
     /// - Parameters:
     ///   - viewController: The ViewController to be presented
     ///   - animated: If it should be animated
-    ///   - preparation: A clousre that runs before present(animated:) is called
+    ///   - preparation: A closure that runs before present(animated:) is called
     public func presenting<T>(_ viewController: UIViewController, animated: Bool = true, preparation: ((T) -> Void)? = nil) -> (T) -> Void {
         return { value in
             preparation?(value)
@@ -68,13 +68,13 @@ extension UIViewController {
         }
     }
 
-    /// A Wrapper method for present(animated:). It retunrns a clousre that first runs an optional
-    /// preperation clousre for set up if needed and then the present(animated:) with the ViewController.
+    /// A Wrapper method for present(animated:). It returns a closure that first runs an optional
+    /// preperation closure for set up if needed and then the present(animated:) with the ViewController.
     ///
     /// - Parameters:
     ///   - viewController: The ViewController to be presented
     ///   - animated: If it should be animated
-    ///   - preparation: A clousre that runs before present(animated:) is called
+    ///   - preparation: A closure that runs before present(animated:) is called
     public func presenting(_ viewController: UIViewController, animated: Bool = true, preparation: (() -> Void)? = nil) -> () -> Void {
         return {
             preparation?()

@@ -3,28 +3,28 @@ import FlowControllerKit
 
 class AppFlowController {
 
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    private let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-    var valueVC: ValueViewController!
-    var navigationController: UINavigationController
+    private let valueViewController: ValueViewController
+    private let navigationController: UINavigationController
 
     init(window: UIWindow) {
-        valueVC = storyboard.instantiate(ValueViewController.self)
-        navigationController = UINavigationController(rootViewController: valueVC)
+        valueViewController = storyboard.instantiate(ValueViewController.self)
+        navigationController = UINavigationController(rootViewController: valueViewController)
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 
     func start() {
-        let changeValueVC = storyboard.instantiate(ChangeValueViewController.self)
-        let modalVC = storyboard.instantiate(ModalViewController.self)
+        let changeValueViewController = storyboard.instantiate(ChangeValueViewController.self)
+        let modalViewController = storyboard.instantiate(ModalViewController.self)
 
-        valueVC.changingValue = valueVC.showing(changeValueVC, preparation: changeValueVC.setup(value:))
-        valueVC.presentModal = valueVC.presenting(modalVC)
+        valueViewController.changingValue = valueViewController.showing(changeValueViewController, preparation: changeValueViewController.setup(value:))
+        valueViewController.presentModal = valueViewController.presenting(modalViewController)
 
-        changeValueVC.changedValue = valueVC.setup(value:)
+        changeValueViewController.changedValue = valueViewController.setup(value:)
 
-        modalVC.dismissing = modalVC.dismissing()
+        modalViewController.dismissing = modalViewController.dismissing()
     }
 }
