@@ -4,7 +4,7 @@
 
 A collection of helpers to make cleaner Flow Controller classes.
 
-If you have ever been bothered by the tight data and navigation cupeling of UIViewControllers when using storyboard and segues the Flow Controller pattern could be something worth looking in to.
+If you have ever been bothered by the tight data and navigation coupling of UIViewControllers when using storyboard and segues the Flow Controller pattern could be something worth looking in to.
 
 Flow Controller (aka Flow Coordinators) is when you centralise the navigation and data injection to another class that handle just that. It makes sure that the right view controller is shown with the right data.
 
@@ -35,7 +35,7 @@ valueVC.changingValue = { value in
 valueVC.changingValue = valueVC.showing(changeValueVC, preparation: changeValueVC.setup(value:))
 ```
 
-There is also a new generic instantiate method for UIStoryboard.
+There is also a new generic initialisation method for UIViewControllers with in storyboards.
 
 ```swift
 // Without FlowControllerKit
