@@ -1,0 +1,6 @@
+
+language: objective-c
+osx_image: xcode9.2
+
+script:
+    - xcodebuild clean build -sdk iphonesimulator -project FlowControllerKit.xcodeproj -scheme FlowControllerKit CODE_SIGNING_REQUIRED=NO
