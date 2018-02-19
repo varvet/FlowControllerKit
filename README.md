@@ -1,12 +1,13 @@
 # FlowControllerKit
 
 [![Build Status](https://travis-ci.org/varvet/FlowControllerKit.svg?branch=master)](https://travis-ci.org/varvet/FlowControllerKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)s
 
 A collection of helpers to make cleaner Flow Controller classes.
 
 If you have ever been bothered by the tight data and navigation coupling of UIViewControllers when using storyboard and segues the Flow Controller pattern could be something worth looking in to.
 
-Flow Controller (aka Flow Coordinators) is when you centralise the navigation and data injection to another class that handle just that. It makes sure that the right view controller is shown with the right data.
+Flow Controller (aka Flow Coordinators) is when you centralize the navigation and data injection to another class. It makes sure that the correct view controller is shown with the correct data.
 
 ## Installation
 
@@ -35,7 +36,7 @@ valueVC.changingValue = { value in
 valueVC.changingValue = valueVC.showing(changeValueVC, preparation: changeValueVC.setup(value:))
 ```
 
-There is also a new generic initialisation method for UIViewControllers with in storyboards.
+There is also a new generic initialization method for UIViewControllers within storyboards.
 
 ```swift
 // Without FlowControllerKit
@@ -47,6 +48,6 @@ valueVC = storyboard.instantiate(ValueViewController.self)
 
 ### Example project
 
-There is an [example project][example] that you can look at if you want an example of this can be used in a simple app.
+There is an [example project][example] of how this can be used.
 
 [example]: https://github.com/varvet/FlowControllerKit/tree/feature/travis-ci/Example
