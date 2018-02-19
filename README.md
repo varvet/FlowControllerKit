@@ -1,7 +1,7 @@
 # FlowControllerKit
 
 [![Build Status](https://travis-ci.org/varvet/FlowControllerKit.svg?branch=master)](https://travis-ci.org/varvet/FlowControllerKit)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)s
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 A collection of helpers to make cleaner Flow Controller classes.
 
