@@ -2,5 +2,17 @@
 language: objective-c
 osx_image: xcode9.2
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a2e17715bb020decffce3f4dd5c441ddb1c8d1d813ab9d8b5e77d7a5cb189ea6
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
-    - xcodebuild clean build -sdk iphonesimulator -project FlowControllerKit.xcodeproj -scheme FlowControllerKit CODE_SIGNING_REQUIRED=NO
+  - xcodebuild clean build -sdk iphonesimulator -project FlowControllerKit.xcodeproj -scheme FlowControllerKit CODE_SIGNING_REQUIRED=NO
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
