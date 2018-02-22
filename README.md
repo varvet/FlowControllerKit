@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/varvet/FlowControllerKit.svg?branch=master)](https://travis-ci.org/varvet/FlowControllerKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![codecov](https://codecov.io/gh/varvet/FlowControllerKit/branch/master/graph/badge.svg)](https://codecov.io/gh/varvet/FlowControllerKit)
 [![Maintainability](https://api.codeclimate.com/v1/badges/13aa1c41bd9bd6399fe5/maintainability)](https://codeclimate.com/github/varvet/FlowControllerKit/maintainability)
 
 A collection of helpers to make cleaner Flow Controller classes.
