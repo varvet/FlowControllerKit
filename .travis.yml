@@ -15,4 +15,4 @@ script:
   - xcodebuild -sdk iphonesimulator -project FlowControllerKit.xcodeproj -scheme FlowControllerKit -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.2' CODE_SIGNING_REQUIRED=NO clean test
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build cobertura --exit-code $TRAVIS_TEST_RESULT
