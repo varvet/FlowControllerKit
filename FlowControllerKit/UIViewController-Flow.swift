@@ -32,7 +32,7 @@ extension UIViewController {
     /// preperation closure for set up if needed and then the dismiss(animated:) with the ViewController.
     ///
     /// - Parameters:
-    ///   - animated: <#animated description#>
+    ///   - animated: If it should be animated
     ///   - preparation: A closure that runs before dismiss(animated:) is called
     public func dismissing<T>(animated: Bool = true, preparation: ((T) -> Void)? = nil) -> (T) -> Void {
         return { value in
@@ -45,7 +45,7 @@ extension UIViewController {
     /// preperation closure for set up if needed and then the dismiss(animated:) with the ViewController.
     ///
     /// - Parameters:
-    ///   - animated: <#animated description#>
+    ///   - animated: If it should be animated
     ///   - preparation: A closure that runs before dismiss(animated:) is called
     public func dismissing(animated: Bool = true, preparation: (() -> Void)? = nil) -> () -> Void {
         return {
