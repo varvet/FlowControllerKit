@@ -2,9 +2,20 @@
 language: objective-c
 osx_image: xcode9.2
 
+env:
+  global:
+    CC_TEST_REPORTER_ID=a2e17715bb020decffce3f4dd5c441ddb1c8d1d813ab9d8b5e77d7a5cb189ea6
+
+before_script:
+  - gem install slather
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
 script:
   - xcodebuild -sdk iphonesimulator -project FlowControllerKit.xcodeproj -scheme FlowControllerKit -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.2' CODE_SIGNING_REQUIRED=NO clean test
 
 after_script:
-  - bash <(curl -s https://codecov.io/bash)
+  - slather coverage -x --travis --scheme FlowControllerKit FlowControllerKit.xcodeproj
+  - ./cc-test-reporter format-coverage -t cobertura
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
   
