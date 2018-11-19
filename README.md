@@ -23,6 +23,16 @@ github "varvet/FlowControllerKit"
 
 Then run `carthage update`.
 
+### Cocoapods
+
+Make the following entry in your podfile:
+
+```
+pod 'FlowControllerKit', :git => 'https://github.com/varvet/FlowControllerKit'
+```
+
+Then run `pod install`.
+
 ## Usage
 
 The main part of FlowControllerKit are the helper methods for showing, presenting, and dismissing view controllers.
